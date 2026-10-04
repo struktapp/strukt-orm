@@ -1,0 +1,87 @@
+{
+    "name": "strukt/orm",
+    "description": "An identity map, unit of work, and result cache over Strukt Ar models.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "strukt/ar": "dev-main"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Strukt\\": "src/Strukt/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../strukt3/base",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "strukt/base": "dev-main"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../strukt3/commons",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "strukt/commons": "dev-main"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../strukt3/console",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "strukt/console": "dev-main"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../strukt4/ar",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "strukt/ar": "dev-main"
+                }
+            }
+        }
+    ],
+    "scripts": {
+        "test": "pest",
+        "test:coverage": "pest --coverage",
+        "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "pitsolu",
+            "email": "pitsolu@gmail.com"
+        }
+    ]
+}
